@@ -1,0 +1,32 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+annotated-types = "*"
+anyio = "*"
+async-timeout = "*"
+click = "*"
+exceptiongroup = "*"
+fastapi = "*"
+greenlet = "*"
+h11 = "*"
+idna = "*"
+pydantic = "*"
+pydantic-settings = "*"
+pydantic-core = "*"
+python-dotenv = "*"
+sniffio = "*"
+sqlalchemy = "*"
+sqlmodel = "*"
+starlette = "*"
+typing-extensions = "*"
+uvicorn = "*"
+psycopg2 = "*"
+asyncpg = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.13"
