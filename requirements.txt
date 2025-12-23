@@ -8,6 +8,7 @@ fastapi
 greenlet
 h11
 idna
+jinja2
 pydantic
 pydantic-settings
 pydantic_core

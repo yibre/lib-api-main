@@ -1,0 +1,85 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Books - Book Manager{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto">
+    <div class="flex justify-between items-center mb-6">
+        <h1 class="text-4xl font-bold text-gray-800">Books Collection</h1>
+        <button
+            onclick="openAddBookModal()"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            + Add New Book
+        </button>
+    </div>
+
+    <!-- Books Grid -->
+    <div id="books-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Books will be loaded here dynamically -->
+        <div class="text-center col-span-full py-12">
+            <p class="text-gray-500">Loading books...</p>
+        </div>
+    </div>
+</div>
+
+<!-- Add Book Modal (hidden by default) -->
+<div id="addBookModal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
+    <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+        <div class="mt-3">
+            <h3 class="text-lg font-medium leading-6 text-gray-900 mb-4">Add New Book</h3>
+            <form id="addBookForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Title</label>
+                    <input
+                        type="text"
+                        id="bookTitle"
+                        required
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 py-2 border">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Author</label>
+                    <input
+                        type="text"
+                        id="bookAuthor"
+                        required
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 py-2 border">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">ISBN</label>
+                    <input
+                        type="text"
+                        id="bookIsbn"
+                        required
+                        placeholder="978-1-4939-1387-3"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 py-2 border">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Description</label>
+                    <textarea
+                        id="bookDescription"
+                        required
+                        rows="3"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 py-2 border"></textarea>
+                </div>
+                <div class="flex gap-3 mt-4">
+                    <button
+                        type="submit"
+                        class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Add Book
+                    </button>
+                    <button
+                        type="button"
+                        onclick="closeAddBookModal()"
+                        class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', path='/js/books.js') }}"></script>
+{% endblock %}

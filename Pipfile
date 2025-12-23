@@ -4,15 +4,18 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+psycopg2 = "*"
 annotated-types = "*"
 anyio = "*"
 async-timeout = "*"
+asyncpg = "*"
 click = "*"
 exceptiongroup = "*"
 fastapi = "*"
 greenlet = "*"
 h11 = "*"
 idna = "*"
+jinja2 = "*"
 pydantic = "*"
 pydantic-settings = "*"
 pydantic-core = "*"
@@ -23,8 +26,6 @@ sqlmodel = "*"
 starlette = "*"
 typing-extensions = "*"
 uvicorn = "*"
-psycopg2 = "*"
-asyncpg = "*"
 
 [dev-packages]
 
